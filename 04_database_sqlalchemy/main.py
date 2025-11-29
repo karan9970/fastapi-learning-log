@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
-
+from typing import List,Optional
 from database import engine, SessionLocal
 import models
 from schemas import UserCreate, UserUpdate, UserResponse
