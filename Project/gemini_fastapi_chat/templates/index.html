@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Gemini fastapi Ui</title>
+</head>
+<body>
+    <div class="container">
+    <h2>ask gemini</h2>
+
+    <form method="post" action="/ask">
+        <input type="text"
+                name="question"
+                placeholder="ask something"
+                required
+                style="width: 300px"
+                />
+        <button type="submit">ASK</button>
+    </form>
+    {% if answer %}
+    <hr>
+    <h3>Question:</h3>
+    <p>
+        {{question}}
+    </p>   
+    <h3>Answer:</h3>
+    <p>
+        {{answer}}
+    </p>
+    </div>
+    {%endif%}
+</body>
+</html>
