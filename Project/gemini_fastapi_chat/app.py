@@ -4,6 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+
 load_dotenv()
 
 app=FastAPI(
@@ -11,10 +12,11 @@ app=FastAPI(
     description="langchain+gemini UI example",
     version="1.0"
 )
+
 app.mount("/static",StaticFiles(directory="static"),name="static")
 
 
-#template
+#Template
 templates=Jinja2Templates(directory="templates")
 
 #LLM
@@ -24,7 +26,6 @@ llm=ChatGoogleGenerativeAI(
 )
 
 #HOME UI
-
 @app.get("/",response_class=HTMLResponse)
 def home(
     request:Request
@@ -35,7 +36,7 @@ def home(
     )
 
 
-#handle form submit
+#Handle form submit
 @app.post("/ask",response_class=HTMLResponse)
 def ask_question(
     request:Request,
