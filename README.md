@@ -29,8 +29,6 @@ The goal of this repo is to:
 * API design & routing
 * Template rendering
 * AI / LLM integrations
-* Clean project structure
-
 ---
 
 ## ⚠️ Note
